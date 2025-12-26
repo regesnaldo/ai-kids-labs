@@ -3,56 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A.I. KIDS LABS - Full Catalog</title>
+    <title>A.I. KIDS LABS - 10 Temporadas</title>
     <style>
         body { margin: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #141414; color: white; overflow-x: hidden; }
         .hero { height: 60vh; background: linear-gradient(to top, #141414, transparent), url('https://images.unsplash.com/photo-1620712943543-bcc4628c6757?auto=format&fit=crop&q=80&w=2000'); background-size: cover; display: flex; flex-direction: column; justify-content: center; padding-left: 5%; }
-        .hero h1 { font-size: 4rem; color: #E50914; margin: 0; }
+        .hero h1 { font-size: 3.5rem; color: #E50914; margin: 0; }
         .hero p { font-size: 1.2rem; max-width: 500px; }
-        .container { padding: 0 5% 50px 5%; margin-top: -50px; }
-        .temporada-titulo { font-size: 1.4rem; color: #e5e5e5; margin: 40px 0 15px 0; font-weight: bold; }
-        .carrossel { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 20px; scrollbar-width: none; }
-        .carrossel::-webkit-scrollbar { display: none; }
-        .card { min-width: 200px; height: 110px; background-color: #2f2f2f; border-radius: 4px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 10px; font-size: 0.85rem; cursor: pointer; transition: 0.4s; border: 2px solid transparent; }
-        .card:hover { transform: scale(1.15); border-color: white; z-index: 10; background-color: #404040; }
-        .btn-play { background-color: white; color: black; padding: 10px 25px; border-radius: 4px; font-weight: bold; text-decoration: none; display: inline-block; margin-top: 15px; transition: 0.3s; }
+        .btn-play { background-color: white; color: black; padding: 12px 30px; border-radius: 4px; font-weight: bold; text-decoration: none; display: inline-block; margin-top: 15px; transition: 0.3s; }
         .btn-play:hover { background-color: #e50914; color: white; }
+        .container { padding: 0 5% 50px 5%; margin-top: -30px; }
+        .temp-titulo { font-size: 1.4rem; color: #e5e5e5; margin: 35px 0 15px 0; font-weight: bold; }
+        .row { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 20px; scrollbar-width: none; }
+        .row::-webkit-scrollbar { display: none; }
+        .card { min-width: 200px; height: 110px; background-color: #2f2f2f; border-radius: 4px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 10px; font-size: 0.85rem; cursor: pointer; transition: 0.4s; border: 2px solid transparent; }
+        .card:hover { transform: scale(1.1); border-color: white; background-color: #404040; z-index: 10; }
     </style>
 </head>
 <body>
 
-    <section class="hero">
+    <header class="hero">
         <h1>A.I. KIDS LABS</h1>
-        <p>Explore o universo da Inteligência Artificial em 10 temporadas incríveis para pequenos e grandes gênios.</p>
-        <a href="#temp1" class="btn-play">▶ ASSISTIR AGORA</a>
-    </section>
+        <p>Aprenda Inteligência Artificial de um jeito divertido.</p>
+        <a href="#catalogo" class="btn-play">▶ ASSISTIR AGORA</a>
+    </header>
 
-    <div class="container" id="temp1">
-        <script>
-            const temporadas = [
-                { t: "1: O Despertar", m: ["O que é IA?", "Robôs Amigos", "Cérebro Digital", "Primeiros Passos"] },
-                { t: "2: Super Poderes", m: ["Fotos Mágicas", "Falando com Máquinas", "Desenhos de IA", "IA Escritora"] },
-                { t: "3: Exploradores", m: ["Carros Sem Motorista", "IA no Espaço", "Doutor Robô", "Cidades do Futuro"] },
-                { t: "4: Fábrica de Histórias", m: ["Criando Contos", "Roteiros de Cinema", "Personagens Vivos", "Finais Alternativos"] },
-                { t: "5: Som e Ritmo", m: ["Compondo Músicas", "Vozes de Robô", "Sinfonia Digital", "DJ Inteligente"] },
-                { t: "6: Detetives Digitais", m: ["O que é Real?", "Verdade ou Mentira?", "Privacidade", "Ser um Bom Cidadão"] },
-                { t: "7: IA no Dia a Dia", m: ["Como a Netflix sabe?", "GPS e Mapas", "Filtros de Fotos", "Assistentes de Voz"] },
-                { t: "8: Criadores de Games", m: ["Inimigos Inteligentes", "Mundos Infinitos", "Design com IA", "Jogando com a Máquina"] },
-                { t: "9: Protetores da Terra", m: ["Limpando Oceanos", "Previsão do Tempo", "Protegendo Animais", "Energia Limpa"] },
-                { t: "10: Seu Grande Projeto", m: ["Revisão Geral", "Minha Primeira IA", "Apresentação", "Formatura!"] }
-            ];
+    <div class="container" id="catalogo">
+        <h2 class="temp-titulo">Temporada 1: O Despertar</h2>
+        <div class="row">
+            <div class="card">1. O que é IA?</div>
+            <div class="card">2. Robôs Amigos</div>
+            <div class="card">3. Cérebro Digital</div>
+            <div class="card">4. Primeiros Passos</div>
+        </div>
 
-            const container = document.querySelector('.container');
-            temporadas.forEach(temp => {
-                const html = `
-                    <h2 class="temporada-titulo">Temporada ${temp.t}</h2>
-                    <div class="carrossel">
-                        ${temp.m.map(mod => `<div class="card">${mod}</div>`).join('')}
-                    </div>
-                `;
-                container.innerHTML += html;
-            });
-        </script>
+        <h2 class="temp-titulo">Temporada 2: Super Poderes</h2>
+        <div class="row">
+            <div class="card">1. Fotos Mágicas</div>
+            <div class="card">2. Falando com Máquinas</div>
+            <div class="card">3. Desenhos de IA</div>
+            <div class="card">4. IA Escritora</div>
+        </div>
+
+        <h2 class="temp-titulo">Temporada 3: Exploradores</h2>
+        <div class="row">
+            <div class="card">1. Carros Autônomos</div>
+            <div class="card">2. IA no Espaço</div>
+            <div class="card">3. Doutor Robô</div>
+            <div class="card">4. Cidades do Futuro</div>
+        </div>
+
+        <h2 class="temp-titulo">Temporada 4: Fábrica de Histórias</h2>
+        <div class="row">
+            <div class="card">1. Criando Contos</div>
+            <div class="card">2. Roteiros de Cinema</div>
+            <div class="card">3. Personagens Vivos</div>
+            <div class="card">4. Finais Diferentes</div>
+        </div>
+
+        <h2 class="temp-titulo">Temporada 5: Som e Ritmo</h2>
+        <div class="row">
+            <div class="card">1. Compondo Música</div>
+            <div class="card">2. Vozes de Robô</div>
+            <div class="card">3. Sinfonia Digital</div>
+            <div class="card">4. DJ Inteligente</div>
+        </div>
+
+        <h2 class="temp-titulo">Temporada 6: Detetives Digitais</h2>
+        <div class="row">
+            <div class="card">1. O que é Real?</div>
+            <div class="card">2. Verdade ou Mentira?</div>
+            <div class="card">3. Minha Privacidade</div>
+            <div class="card">4. Bom Cidadão Digital</div>
+        </div>
+
+        <h2 class="temp-titulo">Temporada 7: IA no Dia a Dia</h2>
+        <div class="row">
+            <div class="card">1. Como a Netflix sabe?</div>
+            <div class="card">2. GPS e Mapas</div>
+            <div class="card">3. Filtros de Fotos</div>
+            <div class="card">4. Assistentes de Voz</div>
+        </div>
+
+        <h2 class="temp-titulo">Temporada 8: Criadores de Games</h2>
+        <div class="row">
+            <div class="card">1. Vilões Inteligentes</div>
+            <div class="card">2. Mundos Infinitos</div>
+            <div class="card">3. Design com IA</div>
+            <div class="card">4. Jogando com a Máquina</div>
+        </div>
+
+        <h2 class="temp-titulo">Temporada 9: Protetores da Terra</h2>
+        <div class="row">
+            <div class="card">1. Limpando Oceanos</div>
+            <div class="card">2. Previsão do Tempo</div>
+            <div class="card">3. Protegendo Animais</div>
+            <div class="card">4. Energia Limpa</div>
+        </div>
+
+        <h2 class="temp-titulo">Temporada 10: Seu Grande Projeto</h2>
+        <div class="row">
+            <div class="card">1. Revisão Geral</div>
+            <div class="card">2. Minha Primeira IA</div>
+            <div class="card">3. Apresentação Final</div>
+            <div class="card">4. Formatura!</div>
+        </div>
     </div>
 
 </body>
