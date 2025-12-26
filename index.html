@@ -3,109 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A.I. KIDS LABS - 10 Temporadas</title>
+    <title>A.I. KIDS LABS - Profissional</title>
     <style>
         body { margin: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #141414; color: white; overflow-x: hidden; }
-        .hero { height: 60vh; background: linear-gradient(to top, #141414, transparent), url('https://images.unsplash.com/photo-1620712943543-bcc4628c6757?auto=format&fit=crop&q=80&w=2000'); background-size: cover; display: flex; flex-direction: column; justify-content: center; padding-left: 5%; }
-        .hero h1 { font-size: 3.5rem; color: #E50914; margin: 0; }
-        .hero p { font-size: 1.2rem; max-width: 500px; }
+        .hero { height: 60vh; background: linear-gradient(to top, #141414, transparent), url('https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=2000'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: center; padding-left: 5%; }
+        .hero h1 { font-size: 3.5rem; color: #E50914; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
         .btn-play { background-color: white; color: black; padding: 12px 30px; border-radius: 4px; font-weight: bold; text-decoration: none; display: inline-block; margin-top: 15px; transition: 0.3s; }
-        .btn-play:hover { background-color: #e50914; color: white; }
+        .btn-play:hover { background-color: #e50914; color: white; transform: scale(1.05); }
+        
         .container { padding: 0 5% 50px 5%; margin-top: -30px; }
         .temp-titulo { font-size: 1.4rem; color: #e5e5e5; margin: 35px 0 15px 0; font-weight: bold; }
-        .row { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 20px; scrollbar-width: none; }
+        .row { display: flex; gap: 15px; overflow-x: auto; padding-bottom: 20px; scrollbar-width: none; }
         .row::-webkit-scrollbar { display: none; }
-        .card { min-width: 200px; height: 110px; background-color: #2f2f2f; border-radius: 4px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 10px; font-size: 0.85rem; cursor: pointer; transition: 0.4s; border: 2px solid transparent; }
-        .card:hover { transform: scale(1.1); border-color: white; background-color: #404040; z-index: 10; }
+
+        /* CARD COM IMAGEM */
+        .card { 
+            min-width: 240px; 
+            height: 135px; 
+            background-size: cover;
+            background-position: center;
+            border-radius: 6px; 
+            display: flex; 
+            align-items: flex-end; 
+            cursor: pointer; 
+            transition: 0.4s; 
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        .card:hover { transform: scale(1.1); border-color: white; z-index: 10; }
+        
+        /* Legenda no Card */
+        .card-text { 
+            background: rgba(0, 0, 0, 0.7); 
+            width: 100%; 
+            padding: 8px; 
+            font-size: 0.8rem; 
+            font-weight: bold;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
 
     <header class="hero">
         <h1>A.I. KIDS LABS</h1>
-        <p>Aprenda Inteligência Artificial de um jeito divertido.</p>
+        <p>O futuro da Inteligência Artificial começa aqui.</p>
         <a href="#catalogo" class="btn-play">▶ ASSISTIR AGORA</a>
     </header>
 
     <div class="container" id="catalogo">
         <h2 class="temp-titulo">Temporada 1: O Despertar</h2>
         <div class="row">
-            <div class="card">1. O que é IA?</div>
-            <div class="card">2. Robôs Amigos</div>
-            <div class="card">3. Cérebro Digital</div>
-            <div class="card">4. Primeiros Passos</div>
+            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=400')"><div class="card-text">1. O que é IA?</div></div>
+            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1531746790731-6c087fecd05a?q=80&w=400')"><div class="card-text">2. Robôs Amigos</div></div>
+            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1507413245164-6160d8298b31?q=80&w=400')"><div class="card-text">3. Cérebro Digital</div></div>
+            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1546776230-bb862b48a495?q=80&w=400')"><div class="card-text">4. Primeiros Passos</div></div>
         </div>
 
         <h2 class="temp-titulo">Temporada 2: Super Poderes</h2>
         <div class="row">
-            <div class="card">1. Fotos Mágicas</div>
-            <div class="card">2. Falando com Máquinas</div>
-            <div class="card">3. Desenhos de IA</div>
-            <div class="card">4. IA Escritora</div>
+            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=400')"><div class="card-text">1. Fotos Mágicas</div></div>
+            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1675271591211-126ad94e495d?q=80&w=400')"><div class="card-text">2. Falando com Máquinas</div></div>
+            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1547891261-38f292b59a97?q=80&w=400')"><div class="card-text">3. Desenhos de IA</div></div>
+            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=400')"><div class="card-text">4. IA Escritora</div></div>
         </div>
 
         <h2 class="temp-titulo">Temporada 3: Exploradores</h2>
         <div class="row">
-            <div class="card">1. Carros Autônomos</div>
-            <div class="card">2. IA no Espaço</div>
-            <div class="card">3. Doutor Robô</div>
-            <div class="card">4. Cidades do Futuro</div>
-        </div>
-
-        <h2 class="temp-titulo">Temporada 4: Fábrica de Histórias</h2>
-        <div class="row">
-            <div class="card">1. Criando Contos</div>
-            <div class="card">2. Roteiros de Cinema</div>
-            <div class="card">3. Personagens Vivos</div>
-            <div class="card">4. Finais Diferentes</div>
-        </div>
-
-        <h2 class="temp-titulo">Temporada 5: Som e Ritmo</h2>
-        <div class="row">
-            <div class="card">1. Compondo Música</div>
-            <div class="card">2. Vozes de Robô</div>
-            <div class="card">3. Sinfonia Digital</div>
-            <div class="card">4. DJ Inteligente</div>
-        </div>
-
-        <h2 class="temp-titulo">Temporada 6: Detetives Digitais</h2>
-        <div class="row">
-            <div class="card">1. O que é Real?</div>
-            <div class="card">2. Verdade ou Mentira?</div>
-            <div class="card">3. Minha Privacidade</div>
-            <div class="card">4. Bom Cidadão Digital</div>
-        </div>
-
-        <h2 class="temp-titulo">Temporada 7: IA no Dia a Dia</h2>
-        <div class="row">
-            <div class="card">1. Como a Netflix sabe?</div>
-            <div class="card">2. GPS e Mapas</div>
-            <div class="card">3. Filtros de Fotos</div>
-            <div class="card">4. Assistentes de Voz</div>
+            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=400')"><div class="card-text">1. Carros Autônomos</div></div>
+            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=400')"><div class="card-text">2. IA no Espaço</div></div>
+            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1576086213369-97a306dca665?q=80&w=400')"><div class="card-text">3. Doutor Robô</div></div>
+            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=400')"><div class="card-text">4. Cidades do Futuro</div></div>
         </div>
 
         <h2 class="temp-titulo">Temporada 8: Criadores de Games</h2>
         <div class="row">
-            <div class="card">1. Vilões Inteligentes</div>
-            <div class="card">2. Mundos Infinitos</div>
-            <div class="card">3. Design com IA</div>
-            <div class="card">4. Jogando com a Máquina</div>
-        </div>
-
-        <h2 class="temp-titulo">Temporada 9: Protetores da Terra</h2>
-        <div class="row">
-            <div class="card">1. Limpando Oceanos</div>
-            <div class="card">2. Previsão do Tempo</div>
-            <div class="card">3. Protegendo Animais</div>
-            <div class="card">4. Energia Limpa</div>
-        </div>
-
-        <h2 class="temp-titulo">Temporada 10: Seu Grande Projeto</h2>
-        <div class="row">
-            <div class="card">1. Revisão Geral</div>
-            <div class="card">2. Minha Primeira IA</div>
-            <div class="card">3. Apresentação Final</div>
-            <div class="card">4. Formatura!</div>
+            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=400')"><div class="card-text">1. Vilões Inteligentes</div></div>
+            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1550745673-3115469f6e61?q=80&w=400')"><div class="card-text">2. Mundos Infinitos</div></div>
+            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=400')"><div class="card-text">3. Design com IA</div></div>
+            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1552820728-8b83bb6b773f?q=80&w=400')"><div class="card-text">4. Jogando com a Máquina</div></div>
         </div>
     </div>
 
