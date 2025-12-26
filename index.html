@@ -3,25 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A.I. KIDS LABS - 10 Temporadas Completas</title>
+    <title>A.I. KIDS LABS - Organizado</title>
     <style>
-        body { margin: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #141414; color: white; overflow-x: hidden; }
-        .hero { height: 50vh; background: linear-gradient(to top, #141414, transparent), url('https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=2000'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: center; padding-left: 5%; }
-        .hero h1 { font-size: 3rem; color: #E50914; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); }
-        .container { padding: 0 5% 50px 5%; margin-top: -20px; }
-        .temp-titulo { font-size: 1.3rem; color: #e5e5e5; margin: 35px 0 12px 0; font-weight: bold; border-left: 5px solid #E50914; padding-left: 12px; }
-        .row { display: flex; gap: 15px; overflow-x: auto; padding-bottom: 25px; scrollbar-width: none; }
-        .row::-webkit-scrollbar { display: none; }
-        .card { min-width: 230px; height: 130px; background-size: cover; background-position: center; border-radius: 6px; display: flex; align-items: flex-end; cursor: pointer; transition: 0.4s ease-in-out; border: 2px solid transparent; overflow: hidden; position: relative; }
-        .card:hover { transform: scale(1.1); border-color: white; z-index: 10; }
-        .card-text { background: rgba(0, 0, 0, 0.75); width: 100%; padding: 10px; font-size: 0.8rem; text-align: center; font-weight: bold; }
+        body { margin: 0; font-family: 'Arial', sans-serif; background-color: #141414; color: white; overflow-x: hidden; }
+        .hero { height: 40vh; background: linear-gradient(to top, #141414, transparent), url('https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200'); background-size: cover; background-position: center; display: flex; align-items: center; padding-left: 5%; }
+        .hero h1 { font-size: 2.5rem; color: #E50914; margin: 0; }
+        
+        .container { padding: 20px 5%; }
+        .temp-titulo { font-size: 1.2rem; margin: 30px 0 15px 0; border-left: 4px solid #E50914; padding-left: 10px; color: #e5e5e5; }
+        
+        /* ESTA PARTE ORGANIZA EM LINHA */
+        .row { 
+            display: flex; 
+            flex-direction: row; /* Força ficar de lado */
+            gap: 15px; 
+            overflow-x: auto; /* Permite rolar para o lado */
+            padding: 10px 0;
+            scrollbar-width: none; /* Esconde a barra no Firefox */
+        }
+        .row::-webkit-scrollbar { display: none; } /* Esconde a barra no Chrome */
+
+        .card { 
+            min-width: 220px; 
+            height: 125px; 
+            background-size: cover; 
+            background-position: center; 
+            border-radius: 4px; 
+            flex-shrink: 0; /* Impede que o card amasse */
+            display: flex; 
+            align-items: flex-end; 
+            border: 2px solid transparent; 
+            transition: 0.3s;
+        }
+        .card:hover { transform: scale(1.05); border-color: white; }
+        .card-text { background: rgba(0,0,0,0.7); width: 100%; padding: 8px; font-size: 0.8rem; text-align: center; }
     </style>
 </head>
 <body>
 
     <header class="hero">
         <h1>A.I. KIDS LABS</h1>
-        <p>A jornada completa da Inteligência Artificial: Das 10 Temporadas.</p>
     </header>
 
     <div class="container">
@@ -64,26 +85,26 @@
 
         <h2 class="temp-titulo">Temporada 7: IA no Dia a Dia</h2>
         <div class="row">
-            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1512428559083-a401c403932e?w=400')"><div class="card-text">1. Netflix e Algoritmos</div></div>
-            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400')"><div class="card-text">2. Smart Houses</div></div>
+            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1512428559083-a401c403932e?w=400')"><div class="card-text">1. Algoritmos</div></div>
+            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400')"><div class="card-text">2. Filtros</div></div>
         </div>
 
         <h2 class="temp-titulo">Temporada 8: Criadores de Games</h2>
         <div class="row">
             <div class="card" style="background-image: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?w=400')"><div class="card-text">1. Vilões Inteligentes</div></div>
-            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1550745673-3115469f6e61?w=400')"><div class="card-text">2. Design</div></div>
+            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1550745673-3115469f6e61?w=400')"><div class="card-text">2. Mundos Infinitos</div></div>
         </div>
 
         <h2 class="temp-titulo">Temporada 9: Protetores da Terra</h2>
         <div class="row">
-            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400')"><div class="card-text">1. Meio Ambiente</div></div>
-            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400')"><div class="card-text">2. Protegendo Espécies</div></div>
+            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400')"><div class="card-text">1. Clima</div></div>
+            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400')"><div class="card-text">2. Animais</div></div>
         </div>
 
-        <h2 class="temp-titulo">Temporada 10: Sua Formatura</h2>
+        <h2 class="temp-titulo">Temporada 10: Formatura</h2>
         <div class="row">
-            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400')"><div class="card-text">1. Meu Grande Projeto</div></div>
-            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400')"><div class="card-text">2. Certificado Digital</div></div>
+            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400')"><div class="card-text">1. Meu Projeto</div></div>
+            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400')"><div class="card-text">2. Certificado</div></div>
         </div>
     </div>
 
