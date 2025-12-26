@@ -1,72 +1,311 @@
-# A.I. KIDS LABS - Todo List
+# A.I. KIDS LABS — PROJECT SPEC (v1.0)
 
-## Fase 1: Banco de Dados e Schema
-- [ ] Criar tabelas: users (pais), childProfiles (perfis infantis), modules (módulos), moduleProgress (progresso), quizzes (quizzes), quizAnswers (respostas)
-- [ ] Definir relacionamentos entre tabelas
-- [ ] Executar migrações do banco de dados
+date: 2025-12-24
+status: MVP
+platform: Bubble (No-Code)
+target: Kids + Pais (Leigos em IA)
 
-## Fase 2: Autenticação e Gestão de Perfis
-- [ ] Implementar fluxo de autenticação de Pais (login/cadastro)
-- [ ] Criar tela de seleção de perfil infantil
-- [ ] Implementar criação de novos perfis infantis
-- [ ] Implementar edição de perfis infantis
-- [ ] Implementar exclusão de perfis infantis
-- [ ] Adicionar mecanismo de Parental Gate (verificação de adulto)
+---
 
-## Fase 3: Área Kids - Biblioteca
-- [ ] Criar layout da Biblioteca estilo Netflix
-- [ ] Implementar carrosséis de categorias
-- [ ] Implementar cartões de módulos com progresso visual
-- [ ] Criar página de detalhe do módulo
-- [ ] Implementar navegação entre módulos
+## 1. PRODUCT OVERVIEW
 
-## Fase 4: Player de Vídeo e Labs
-- [ ] Integrar player de vídeo (HTML5 ou biblioteca)
-- [ ] Implementar controles simples e seguros do player
-- [ ] Criar páginas de Labs interativos (simulações)
-- [ ] Implementar sistema de progresso (marca etapas concluídas)
+name: A.I. KIDS LABS
+type: Educational Streaming Platform
+focus:
+  - Artificial Intelligence
+  - Children Education
+  - Parental Monitoring
+principles:
+  - Privacy by Design
+  - COPPA / GDPR-K compliant
+  - Fun + Learning + Safety
 
-## Fase 5: Sistema de Quiz e Gamificação
-- [ ] Criar interface de Quiz com 3 perguntas
-- [ ] Implementar feedback visual (cores, animações)
-- [ ] Implementar feedback sonoro (sons de acerto/erro)
-- [ ] Criar sistema de pontuação
-- [ ] Implementar sistema de badges/conquistas
-- [ ] Implementar barras de progresso visuais
+---
 
-## Fase 6: Painel dos Pais
-- [ ] Criar layout do Painel dos Pais
-- [ ] Implementar visualização de perfis dos filhos
-- [ ] Implementar relatórios de progresso (gráficos, tempo gasto)
-- [ ] Implementar visualização de módulos concluídos
-- [ ] Implementar resumos educacionais por módulo
-- [ ] Criar funcionalidade de gerenciamento de assinatura
+## 2. CONTENT ARCHITECTURE
 
-## Fase 7: Conformidade Legal
-- [ ] Criar Política de Privacidade (versão Pais e versão Crianças)
-- [ ] Implementar mecanismo de consentimento parental verificável
-- [ ] Implementar funcionalidade de exclusão completa de dados
-- [ ] Adicionar avisos de segurança e privacidade
-- [ ] Implementar restrições de comunicação (sem chat aberto)
+modules_total: 15
+progression: linear
+completion_rule: sequential_unlock
 
-## Fase 8: Design Neon Futurista
-- [ ] Definir paleta de cores (neon ciano, magenta, fundo escuro)
-- [ ] Implementar tipografia futurista e legível
-- [ ] Criar elementos gráficos (ícones, gradientes, linhas neon)
-- [ ] Aplicar design em todas as páginas
-- [ ] Implementar animações fluidas e transições
+modules:
 
-## Fase 9: Testes e Validação
-- [ ] Testar fluxo de autenticação (Pais e Crianças)
-- [ ] Testar navegação e usabilidade
-- [ ] Testar sistema de progresso e quiz
-- [ ] Testar Painel dos Pais
-- [ ] Validar conformidade COPPA/GDPR-K
-- [ ] Testar segurança de dados
+  - id: 1
+    title: "O que é IA? O Básico"
+    goal: "Introduzir IA, ML e DL"
+    audience: ["crianças", "pais"]
 
-## Fase 10: Entrega
-- [ ] Criar documentação de uso
-- [ ] Criar guia de administração
-- [ ] Preparar dados de exemplo (módulos, conteúdo)
-- [ ] Fazer checkpoint final
-- [ ] Entregar plataforma ao usuário
+  - id: 2
+    title: "O Cérebro Digital"
+    goal: "Explicar redes neurais"
+    audience: ["crianças", "pais"]
+
+  - id: 3
+    title: "O Quebra-Cabeça dos Dados"
+    goal: "Importância dos dados"
+    audience: ["crianças", "pais"]
+
+  - id: 4
+    title: "IA na Sua Casa"
+    goal: "IA no cotidiano"
+    audience: ["crianças", "pais"]
+
+  - id: 5
+    title: "O Olho da Máquina"
+    goal: "Visão computacional"
+    audience: ["crianças", "pais"]
+
+  - id: 6
+    title: "A Voz da Máquina"
+    goal: "NLP e linguagem"
+    audience: ["crianças", "pais"]
+
+  - id: 7
+    title: "Algoritmos Secretos"
+    goal: "Recomendações"
+    audience: ["crianças", "pais"]
+
+  - id: 8
+    title: "Criando com a IA"
+    goal: "IA Generativa"
+    audience: ["crianças", "pais"]
+
+  - id: 9
+    title: "O Robô que Dirige"
+    goal: "IA em robótica"
+    audience: ["crianças", "pais"]
+
+  - id: 10
+    title: "Meu Primeiro Modelo"
+    goal: "Criar modelo simples"
+    audience: ["crianças"]
+
+  - id: 11
+    title: "Viés e Justiça na IA"
+    goal: "Bias e ética"
+    audience: ["crianças", "pais"]
+
+  - id: 12
+    title: "Segurança e Privacidade"
+    goal: "Uso seguro da IA"
+    audience: ["crianças", "pais"]
+
+  - id: 13
+    title: "IA e o Futuro do Trabalho"
+    goal: "Impacto profissional"
+    audience: ["pais", "crianças"]
+
+  - id: 14
+    title: "Painel dos Pais"
+    goal: "Acompanhamento"
+    audience: ["pais"]
+
+  - id: 15
+    title: "Desafio Final"
+    goal: "Projeto prático"
+    audience: ["crianças"]
+
+---
+
+## 3. MODULE STRUCTURE
+
+module_components:
+  video:
+    duration: "5-8 min"
+    type: animated_avatar
+  lab:
+    duration: "5-10 min"
+    type: sandbox_simulation
+  quiz:
+    questions: 3
+    instant_feedback: true
+  parent_summary:
+    location: "Painel dos Pais"
+    format: short_text
+
+---
+
+## 4. PLATFORM AREAS
+
+areas:
+
+  kids_area:
+    access: child_only
+    features:
+      - streaming_library
+      - video_player
+      - interactive_labs
+      - achievements
+      - progress_tracking
+
+  parents_panel:
+    access: authenticated_parent
+    features:
+      - child_profiles
+      - progress_reports
+      - subscription_management
+      - privacy_controls
+      - data_deletion
+
+  marketing_site:
+    access: public
+    features:
+      - landing_page
+      - blog
+      - signup_login
+
+---
+
+## 5. UI / UX SYSTEM
+
+theme:
+  style: futuristic_ludic
+  background: "#0A0A1A"
+  accent_colors:
+    - "#00FFFF"
+    - "#FF00FF"
+
+typography:
+  titles: Orbitron
+  body: Poppins
+
+ux_rules:
+  - large_buttons
+  - minimal_text
+  - instant_feedback
+  - sound_visual_rewards
+
+---
+
+## 6. DATABASE MODEL (BUBBLE)
+
+data_types:
+
+  User:
+    fields:
+      - email
+      - password
+      - assinatura_status
+    relations:
+      - perfis_infantis[]
+
+  Perfil_Infantil:
+    fields:
+      - nome
+      - idade
+      - avatar_url
+    relations:
+      - responsavel: User
+      - progresso_modulos[]
+
+  Modulo:
+    fields:
+      - titulo
+      - url_video
+      - url_lab
+      - resumo_pais
+    relations:
+      - quizzes[]
+
+  Progresso_Modulo:
+    fields:
+      - status
+      - data_conclusao
+      - pontuacao_quiz
+    relations:
+      - modulo
+      - perfil_infantil
+
+---
+
+## 7. DEVELOPMENT ROADMAP
+
+milestones:
+
+  M1:
+    focus: structure_auth
+    features:
+      - visual_guide
+      - parent_signup
+      - child_profile_creation
+
+  M2:
+    focus: kids_experience
+    features:
+      - netflix_style_library
+      - video_player
+      - progress_workflows
+
+  M3:
+    focus: monetization_and_compliance
+    features:
+      - parental_dashboard
+      - stripe_integration
+      - consent_management
+      - ai_apis
+
+---
+
+## 8. API INTEGRATIONS
+
+apis:
+
+  payments:
+    - Stripe
+    - PagSeguro
+
+  voice:
+    - ElevenLabs
+    - Vidnoz
+
+  avatars:
+    - D-ID
+    - HeyGen
+
+  labs:
+    - custom_simple_ai_models
+
+---
+
+## 9. LEGAL & PRIVACY
+
+compliance:
+  - COPPA
+  - GDPR-K
+
+rules:
+  - parental_consent_required
+  - minimal_child_data
+  - delete_on_request
+  - privacy_by_design
+
+---
+
+## 10. TIMELINE
+
+mvp_duration_weeks: 15
+
+phases:
+  planning: 2
+  M1: 3
+  M2: 4
+  M3: 4
+  testing_launch: 2
+
+---
+
+## 11. COST ESTIMATES
+
+monthly_cost_usd:
+  bubble: "134-399"
+  ai_services: "25-72"
+  video_hosting: "20-70"
+
+development_cost_usd:
+  bubble_dev: "5000-15000"
+  uiux: "1000-3000"
+  content: "500-1500"
+
+---
+
+## END OF SPEC
