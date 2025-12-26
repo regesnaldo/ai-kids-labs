@@ -8,30 +8,93 @@
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .neon-border { box-shadow: 0 0 10px #22d3ee, 0 0 20px #22d3ee; }
+        .card-gradient { background: linear-gradient(145deg, #1e293b, #0f172a); }
+    </style>
 </head>
 <body class="bg-slate-900">
     <div id="root"></div>
 
     <script type="text/babel">
-        // Importante: Remova as linhas de "import" do seu código original aqui embaixo
-        // pois no navegador usamos os links acima.
-
         const { useState, useEffect } = React;
 
         const AILearnPlatform = () => {
-            // COLE AQUI O RESTANTE DO SEU CÓDIGO (começando das variáveis const content...)
-            
-            return (
-                <div className="p-4 text-white text-center">
-                    <h1 className="text-2xl font-bold">Plataforma Carregada!</h1>
-                    <p>Seu código React agora está sendo processado corretamente.</p>
-                </div>
-            );
-        };
+            // Estados extraídos do seu código original
+            const [activeTab, setActiveTab] = useState('explore');
+            const [selectedCategory, setSelectedCategory] = useState('all');
+            const [showParentDashboard, setShowParentDashboard] = useState(false);
+            const [userProfile, setUserProfile] = useState('kid');
 
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(<AILearnPlatform />);
-    </script>
-</body>
-</html>
+            const categories = [
+                { id: 'all', name: 'Todos', icon: '✨' },
+                { id: 'basics', name: 'Iniciante', icon: '📖' },
+                { id: 'robots', name: 'Robôs', icon: '🤖' },
+                { id: 'games', name: 'Jogos IA', icon: '🎮' },
+                { id: 'future', name: 'Futuro', icon: '🚀' }
+            ];
+
+            const content = [
+                { id: 1, titulo: 'O que é Inteligência Artificial?', categoria: 'basics', duracao: '8 min', nivel: 'Iniciante', descricao: 'Descubra o que é IA de forma divertida e simples!', ageRating: '7+' },
+                { id: 2, titulo: 'Como os Robôs Aprendem?', categoria: 'robots', duracao: '12 min', nivel: 'Intermediário', descricao: 'Explore como as máquinas aprendem através de exemplos!', ageRating: '8+' },
+                { id: 3, titulo: 'IA nos Videogames', categoria: 'games', duracao: '15 min', nivel: 'Intermediário', descricao: 'Descubra como a IA torna os jogos mais inteligentes!', ageRating: '9+' },
+                { id: 4, titulo: 'Carros Autônomos', categoria: 'future', duracao: '10 min', nivel: 'Avançado', descricao: 'Como os carros podem dirigir sozinhos?', ageRating: '9+' },
+                { id: 5, titulo: 'Assistentes Virtuais', categoria: 'basics', duracao: '9 min', nivel: 'Iniciante', descricao: 'Como a Alexa e a Siri entendem o que você fala?', ageRating: '7+' },
+                { id: 6, titulo: 'IA e Arte Digital', categoria: 'future', duracao: '14 min', nivel: 'Intermediário', descricao: 'Máquinas podem criar arte? Descubra!', ageRating: '8+' }
+            ];
+
+            // Tela do Painel dos Pais
+            if (showParentDashboard) {
+                return (
+                    <div className="min-h-screen bg-slate-900 p-8 text-white">
+                        <header className="flex justify-between items-center mb-10">
+                            <h1 className="text-3xl font-bold">Painel dos Pais</h1>
+                            <button onClick={() => setShowParentDashboard(false)} className="px-4 py-2 bg-slate-700 hover:bg-slate-600 rounded-lg transition">Voltar</button>
+                        </header>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                            <div className="bg-slate-800 p-6 rounded-2xl border border-slate-700">
+                                <p className="text-slate-400 text-sm">Tempo assistido esta semana</p>
+                                <p className="text-3xl font-bold mt-2">2h 45min</p>
+                            </div>
+                            <div className="bg-slate-800 p-6 rounded-2xl border border-slate-700">
+                                <p className="text-slate-400 text-sm">Conteúdos completados</p>
+                                <p className="text-3xl font-bold mt-2">85%</p>
+                            </div>
+                            <div className="bg-slate-800 p-6 rounded-2xl border border-slate-700">
+                                <p className="text-slate-400 text-sm">Nível de engajamento</p>
+                                <p className="text-3xl font-bold mt-2">Alto</p>
+                            </div>
+                        </div>
+                        <h2 className="text-2xl font-bold mb-6">Progresso por Categoria</h2>
+                        <div className="space-y-4">
+                            {categories.filter(c => c.id !== 'all').map(cat => (
+                                <div key={cat.id} className="bg-slate-800 p-4 rounded-xl">
+                                    <div className="flex justify-between mb-2">
+                                        <span>{cat.name}</span>
+                                        <span className="text-blue-400">75%</span>
+                                    </div>
+                                    <div className="w-full bg-slate-700 h-2 rounded-full overflow-hidden">
+                                        <div className="bg-blue-500 h-full w-[75%]"></div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                );
+            }
+
+            // Tela Principal da Plataforma
+            return (
+                <div className="min-h-screen bg-slate-900 text-white p-6 md:p-12">
+                    <header className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-6">
+                        <div>
+                            <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-2">
+                                A.I. KIDS LABS
+                            </h1>
+                            <p className="text-slate-400 text-lg">O Futuro da Educação para Pequenos Gênios</p>
+                        </div>
+                        <div className="flex gap-4">
+                            <button onClick={() => setShowParentDashboard(true)} className="px-6 py-3 bg-slate-800 hover:bg-slate-700 rounded-xl font-bold transition-all border border-slate-700">
+                                👨‍👩‍👧‍👦 Painel dos Pais
+                            </button>
+                            <div className="w-12 h-12 bg-gradient-to-tr from-purple-500 to-pink-500 rounded-full flex items-
