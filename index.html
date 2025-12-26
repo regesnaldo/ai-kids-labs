@@ -1,311 +1,147 @@
-# A.I. KIDS LABS — PROJECT SPEC (v1.0)
-
-date: 2025-12-24
-status: MVP
-platform: Bubble (No-Code)
-target: Kids + Pais (Leigos em IA)
-
----
-
-## 1. PRODUCT OVERVIEW
-
-name: A.I. KIDS LABS
-type: Educational Streaming Platform
-focus:
-  - Artificial Intelligence
-  - Children Education
-  - Parental Monitoring
-principles:
-  - Privacy by Design
-  - COPPA / GDPR-K compliant
-  - Fun + Learning + Safety
-
----
-
-## 2. CONTENT ARCHITECTURE
-
-modules_total: 15
-progression: linear
-completion_rule: sequential_unlock
-
-modules:
-
-  - id: 1
-    title: "O que é IA? O Básico"
-    goal: "Introduzir IA, ML e DL"
-    audience: ["crianças", "pais"]
-
-  - id: 2
-    title: "O Cérebro Digital"
-    goal: "Explicar redes neurais"
-    audience: ["crianças", "pais"]
-
-  - id: 3
-    title: "O Quebra-Cabeça dos Dados"
-    goal: "Importância dos dados"
-    audience: ["crianças", "pais"]
-
-  - id: 4
-    title: "IA na Sua Casa"
-    goal: "IA no cotidiano"
-    audience: ["crianças", "pais"]
-
-  - id: 5
-    title: "O Olho da Máquina"
-    goal: "Visão computacional"
-    audience: ["crianças", "pais"]
-
-  - id: 6
-    title: "A Voz da Máquina"
-    goal: "NLP e linguagem"
-    audience: ["crianças", "pais"]
-
-  - id: 7
-    title: "Algoritmos Secretos"
-    goal: "Recomendações"
-    audience: ["crianças", "pais"]
-
-  - id: 8
-    title: "Criando com a IA"
-    goal: "IA Generativa"
-    audience: ["crianças", "pais"]
-
-  - id: 9
-    title: "O Robô que Dirige"
-    goal: "IA em robótica"
-    audience: ["crianças", "pais"]
-
-  - id: 10
-    title: "Meu Primeiro Modelo"
-    goal: "Criar modelo simples"
-    audience: ["crianças"]
-
-  - id: 11
-    title: "Viés e Justiça na IA"
-    goal: "Bias e ética"
-    audience: ["crianças", "pais"]
-
-  - id: 12
-    title: "Segurança e Privacidade"
-    goal: "Uso seguro da IA"
-    audience: ["crianças", "pais"]
-
-  - id: 13
-    title: "IA e o Futuro do Trabalho"
-    goal: "Impacto profissional"
-    audience: ["pais", "crianças"]
-
-  - id: 14
-    title: "Painel dos Pais"
-    goal: "Acompanhamento"
-    audience: ["pais"]
-
-  - id: 15
-    title: "Desafio Final"
-    goal: "Projeto prático"
-    audience: ["crianças"]
-
----
-
-## 3. MODULE STRUCTURE
-
-module_components:
-  video:
-    duration: "5-8 min"
-    type: animated_avatar
-  lab:
-    duration: "5-10 min"
-    type: sandbox_simulation
-  quiz:
-    questions: 3
-    instant_feedback: true
-  parent_summary:
-    location: "Painel dos Pais"
-    format: short_text
-
----
-
-## 4. PLATFORM AREAS
-
-areas:
-
-  kids_area:
-    access: child_only
-    features:
-      - streaming_library
-      - video_player
-      - interactive_labs
-      - achievements
-      - progress_tracking
-
-  parents_panel:
-    access: authenticated_parent
-    features:
-      - child_profiles
-      - progress_reports
-      - subscription_management
-      - privacy_controls
-      - data_deletion
-
-  marketing_site:
-    access: public
-    features:
-      - landing_page
-      - blog
-      - signup_login
-
----
-
-## 5. UI / UX SYSTEM
-
-theme:
-  style: futuristic_ludic
-  background: "#0A0A1A"
-  accent_colors:
-    - "#00FFFF"
-    - "#FF00FF"
-
-typography:
-  titles: Orbitron
-  body: Poppins
-
-ux_rules:
-  - large_buttons
-  - minimal_text
-  - instant_feedback
-  - sound_visual_rewards
-
----
-
-## 6. DATABASE MODEL (BUBBLE)
-
-data_types:
-
-  User:
-    fields:
-      - email
-      - password
-      - assinatura_status
-    relations:
-      - perfis_infantis[]
-
-  Perfil_Infantil:
-    fields:
-      - nome
-      - idade
-      - avatar_url
-    relations:
-      - responsavel: User
-      - progresso_modulos[]
-
-  Modulo:
-    fields:
-      - titulo
-      - url_video
-      - url_lab
-      - resumo_pais
-    relations:
-      - quizzes[]
-
-  Progresso_Modulo:
-    fields:
-      - status
-      - data_conclusao
-      - pontuacao_quiz
-    relations:
-      - modulo
-      - perfil_infantil
-
----
-
-## 7. DEVELOPMENT ROADMAP
-
-milestones:
-
-  M1:
-    focus: structure_auth
-    features:
-      - visual_guide
-      - parent_signup
-      - child_profile_creation
-
-  M2:
-    focus: kids_experience
-    features:
-      - netflix_style_library
-      - video_player
-      - progress_workflows
-
-  M3:
-    focus: monetization_and_compliance
-    features:
-      - parental_dashboard
-      - stripe_integration
-      - consent_management
-      - ai_apis
-
----
-
-## 8. API INTEGRATIONS
-
-apis:
-
-  payments:
-    - Stripe
-    - PagSeguro
-
-  voice:
-    - ElevenLabs
-    - Vidnoz
-
-  avatars:
-    - D-ID
-    - HeyGen
-
-  labs:
-    - custom_simple_ai_models
-
----
-
-## 9. LEGAL & PRIVACY
-
-compliance:
-  - COPPA
-  - GDPR-K
-
-rules:
-  - parental_consent_required
-  - minimal_child_data
-  - delete_on_request
-  - privacy_by_design
-
----
-
-## 10. TIMELINE
-
-mvp_duration_weeks: 15
-
-phases:
-  planning: 2
-  M1: 3
-  M2: 4
-  M3: 4
-  testing_launch: 2
-
----
-
-## 11. COST ESTIMATES
-
-monthly_cost_usd:
-  bubble: "134-399"
-  ai_services: "25-72"
-  video_hosting: "20-70"
-
-development_cost_usd:
-  bubble_dev: "5000-15000"
-  uiux: "1000-3000"
-  content: "500-1500"
-
----
-
-## END OF SPEC
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurora AI - Aprenda Inteligência Artificial Divertidamente</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Partículas de Fundo Animadas -->
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- TELA DE SELEÇÃO DE PERFIS -->
+    <section id="profile-screen">
+        <header>
+            <h1 class="logo">Aurora <span>AI</span></h1>
+        </header>
+        <main>
+            <h2>Quem está assistindo?</h2>
+            <div class="profiles-grid">
+                <button class="profile-btn" data-profile="crianca">
+                    <img src="https://i.pravatar.cc/150?img=4" alt="Perfil Criança">
+                    <span>Leo</span>
+                </button>
+                <button class="profile-btn" data-profile="adulto">
+                    <img src="https://i.pravatar.cc/150?img=5" alt="Perfil Adulto">
+                    <span>Mariana</span>
+                </button>
+                <button class="profile-btn parental-lock">
+                    <img src="https://i.pravatar.cc/150?img=3" alt="Zona dos Pais">
+                    <span>Zona dos Pais</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                </button>
+                <button class="profile-btn add-profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    <span>Adicionar Perfil</span>
+                </button>
+            </div>
+        </main>
+    </section>
+
+    <!-- INTERFACE PRINCIPAL DO APP -->
+    <section id="main-app" class="hidden">
+        <header class="main-header glass">
+            <h1 class="logo">Aurora <span>AI</span></h1>
+            <nav>
+                <a href="#" class="active">Início</a>
+                <a href="#">Módulos</a>
+                <a href="#">Explorar</a>
+                <a href="#">Minhas Conquistas</a>
+            </nav>
+            <div class="header-user">
+                <img src="https://i.pravatar.cc/150?img=4" alt="Usuário Atual">
+            </div>
+        </header>
+
+        <main>
+            <!-- SEÇÃO HEROI -->
+            <section class="hero" style="background-image: linear-gradient(rgba(10, 14, 39, 0.7), rgba(10, 14, 39, 0.7)), url('https://images.unsplash.com/photo-1620712943543-2b9d6798d3a4?q=80&w=2070');">
+                <div class="hero-content">
+                    <h2>Módulo 2: O Cérebro da Máquina</h2>
+                    <p>Desvende os segredos do Aprendizado de Máquina e veja como os computadores aprendem sozinhos, como se tivessem um cérebro digital.</p>
+                    <div class="hero-actions">
+                        <button class="btn-play">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            Assistir
+                        </button>
+                        <button class="btn-secondary">Mais Informações</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CARROSÉIS DE CONTEÚDO -->
+            <div class="content-container">
+                <div class="content-row">
+                    <h3>Continue Assistindo</h3>
+                    <div class="carousel">
+                        <article class="content-card">
+                            <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=1974" alt="Conteúdo 1">
+                            <div class="card-info">
+                                <span class="progress-bar" style="width: 65%;"></span>
+                                <p>Episódio 3: Algoritmos</p>
+                            </div>
+                        </article>
+                        <article class="content-card">
+                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070" alt="Conteúdo 2">
+                            <div class="card-info">
+                                <span class="progress-bar" style="width: 30%;"></span>
+                                <p>Lab: Treine seu primeiro Modelo</p>
+                            </div>
+                        </article>
+                        <article class="content-card">
+                            <img src="https://images.unsplash.com/photo-1534723452862-4c874018d66d?q=80&w=1988" alt="Conteúdo 3">
+                            <div class="card-info">
+                                <span class="progress-bar" style="width: 90%;"></span>
+                                <p>Desafio: O que é um Dado?</p>
+                            </div>
+                        </article>
+                         <article class="content-card">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070" alt="Conteúdo 4">
+                            <div class="card-info">
+                                <p>IA no Mundo Real: Carros Autônomos</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="content-row">
+                    <h3>Labs Interativos</h3>
+                    <div class="carousel">
+                        <article class="content-card">
+                            <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=2070" alt="Lab 1">
+                            <div class="card-info">
+                                <p>Crie seu Avatar com IA</p>
+                            </div>
+                        </article>
+                        <article class="content-card">
+                            <img src="https://images.unsplash.com/photo-1517134191118-9d595e4c8c2b?q=80&w=2070" alt="Lab 2">
+                            <div class="card-info">
+                                <p>Desenhe e Deixe a IA Adivinhar</p>
+                            </div>
+                        </article>
+                        <article class="content-card">
+                            <img src="https://images.unsplash.com/photo-1622634213745-8726ced31f84?q=80&w=2070" alt="Lab 3">
+                            <div class="card-info">
+                                <p>Componha Música com IA</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
