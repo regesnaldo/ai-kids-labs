@@ -3,59 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Netflix - A.I. KIDS LABS</title>
+    <title>Netflix - A.I. KIDS LABS (Full Catalog)</title>
     <style>
         :root { --netflix-red: #E50914; --dark-bg: #141414; }
         body { margin: 0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: var(--dark-bg); color: white; overflow-x: hidden; }
 
-        /* HEADER */
+        /* HEADER PROFISSIONAL */
         header { 
             position: fixed; top: 0; width: 100%; z-index: 1000; 
             display: flex; justify-content: space-between; align-items: center; 
-            padding: 20px 4%; background: linear-gradient(to bottom, rgba(0,0,0,0.8) 10%, transparent);
+            padding: 20px 4%; background: linear-gradient(to bottom, rgba(0,0,0,0.9) 10%, transparent);
         }
-        .logo { color: var(--netflix-red); font-size: 2rem; font-weight: bold; }
-        .nav-buttons { display: flex; gap: 15px; margin-right: 5%; }
-        .btn-ui { background: rgba(255,255,255,0.1); border: 1px solid white; color: white; padding: 8px 15px; border-radius: 4px; cursor: pointer; }
+        .logo { color: var(--netflix-red); font-size: 2rem; font-weight: bold; letter-spacing: -1px; }
+        .nav-buttons { display: flex; gap: 15px; margin-right: 50px; }
+        .btn-ui { background: rgba(255,255,255,0.1); border: 1px solid white; color: white; padding: 8px 15px; border-radius: 4px; cursor: pointer; font-size: 0.9rem; transition: 0.3s; }
+        .btn-ui:hover { background: white; color: black; }
 
-        /* BANNER */
+        /* BANNER IMPACTANTE */
         .hero { 
-            height: 70vh; background: linear-gradient(to top, var(--dark-bg), transparent 60%), 
+            height: 75vh; background: linear-gradient(to top, var(--dark-bg), transparent 70%), 
             url('https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1600'); 
             background-size: cover; background-position: center;
             display: flex; flex-direction: column; justify-content: center; padding-left: 4%;
         }
-        .hero-title { font-size: 4.5rem; margin: 0; }
-        .btn-play { background: white; color: black; padding: 12px 35px; border-radius: 4px; font-weight: bold; border: none; font-size: 1.2rem; cursor: pointer; margin-top: 20px; }
+        .hero-title { font-size: 4.5rem; margin: 0; text-shadow: 2px 2px 8px rgba(0,0,0,0.9); }
+        .hero-desc { font-size: 1.3rem; max-width: 650px; margin: 20px 0; text-shadow: 1px 1px 4px black; }
+        .btn-play { background: white; color: black; padding: 12px 40px; border-radius: 4px; font-weight: bold; border: none; font-size: 1.2rem; cursor: pointer; transition: 0.3s; }
+        .btn-play:hover { background: #e50914; color: white; transform: scale(1.05); }
 
-        /* CARROSSEL E CARDS (AQUI ESTÁ O AUMENTO) */
-        .main-container { padding: 0 4% 50px 4%; margin-top: -80px; position: relative; z-index: 10; }
-        .row-title { font-size: 1.5rem; color: #e5e5e5; margin: 40px 0 15px 0; font-weight: bold; }
+        /* CARROSSEL ORGANIZADO */
+        .main-container { padding: 0 4% 100px 4%; margin-top: -100px; position: relative; z-index: 10; }
+        .row-title { font-size: 1.6rem; color: #e5e5e5; margin: 50px 0 15px 0; font-weight: bold; border-left: 6px solid var(--netflix-red); padding-left: 15px; }
         
         .row-posters { 
             display: flex; 
             overflow-x: auto; 
             padding: 20px 0; 
             scrollbar-width: none; 
-            gap: 15px;
+            gap: 20px;
         }
         .row-posters::-webkit-scrollbar { display: none; }
         
+        /* CARD NO TAMANHO NETFLIX (350px) */
         .poster { 
-            /* TAMANHO AMPLIADO AQUI */
             min-width: 350px; 
             height: 197px; 
             background-size: cover;
             background-position: center;
-            border-radius: 6px;
+            border-radius: 8px;
             transition: transform 450ms;
             cursor: pointer;
             display: flex;
             align-items: flex-end;
             flex-shrink: 0;
+            border: 2px solid transparent;
         }
-        .poster:hover { transform: scale(1.1); z-index: 100; border: 2px solid white; }
-        .poster-title { background: rgba(0,0,0,0.85); width: 100%; padding: 12px; font-size: 1rem; text-align: center; border-radius: 0 0 6px 6px; font-weight: bold; }
+        .poster:hover { transform: scale(1.1); z-index: 100; border-color: white; }
+        .poster-title { background: rgba(0,0,0,0.85); width: 100%; padding: 12px; font-size: 1.1rem; text-align: center; border-radius: 0 0 8px 8px; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -69,7 +73,8 @@
     </header>
 
     <section class="hero">
-        <h1 class="hero-title">O Despertar da IA</h1>
+        <h1 class="hero-title">A.I. KIDS LABS</h1>
+        <p class="hero-desc">Explore 10 temporadas incríveis e aprenda tudo sobre o futuro com Inteligência Artificial de um jeito divertido.</p>
         <button class="btn-play">▶ Assistir Agora</button>
     </section>
 
@@ -79,12 +84,21 @@
     <script>
         const temporadas = [
             { t: "Temporada 1: O Despertar", img: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600", m: ["1. O que é IA?", "2. Robôs Amigos", "3. Cérebro Digital"] },
-            { t: "Temporada 2: Super Poderes", img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600", m: ["1. Fotos Mágicas", "2. Desenhos de IA"] }
+            { t: "Temporada 2: Super Poderes", img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600", m: ["1. Fotos Mágicas", "2. Desenhos de IA", "3. IA Escritora"] },
+            { t: "Temporada 3: Exploradores", img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600", m: ["1. Carros Autônomos", "2. IA no Espaço", "3. Doutor Robô"] },
+            { t: "Temporada 4: Fábrica de Histórias", img: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=600", m: ["1. Criando Contos", "2. Roteiros de Cinema", "3. Personagens"] },
+            { t: "Temporada 5: Som e Ritmo", img: "https://images.unsplash.com/photo-1514525253361-bee8718a3039?w=600", m: ["1. Compondo Música", "2. Vozes de Robô", "3. DJ IA"] },
+            { t: "Temporada 6: Detetives Digitais", img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600", m: ["1. O que é Real?", "2. Verdade ou Mentira?", "3. Privacidade"] },
+            { t: "Temporada 7: IA no Dia a Dia", img: "https://images.unsplash.com/photo-1512428559083-a401c403932e?w=600", m: ["1. Algoritmos", "2. Filtros de Fotos", "3. Casas Inteligentes"] },
+            { t: "Temporada 8: Criadores de Games", img: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600", m: ["1. Vilões Inteligentes", "2. Mundos Infinitos", "3. Design"] },
+            { t: "Temporada 9: Protetores da Terra", img: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600", m: ["1. Meio Ambiente", "2. Protegendo Animais", "3. Energia Clean"] },
+            { t: "Temporada 10: Formatura", img: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600", m: ["1. Meu Grande Projeto", "2. Certificado Final"] }
         ];
 
         const container = document.getElementById('content-rows');
         temporadas.forEach(item => {
-            const html = `
+            const row = document.createElement('div');
+            row.innerHTML = `
                 <h2 class="row-title">${item.t}</h2>
                 <div class="row-posters">
                     ${item.m.map(mod => `
@@ -94,7 +108,7 @@
                     `).join('')}
                 </div>
             `;
-            container.innerHTML += html;
+            container.appendChild(row);
         });
     </script>
 </body>
