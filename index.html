@@ -3,110 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A.I. KIDS LABS - Organizado</title>
+    <title>Netflix - A.I. KIDS LABS</title>
     <style>
-        body { margin: 0; font-family: 'Arial', sans-serif; background-color: #141414; color: white; overflow-x: hidden; }
-        .hero { height: 40vh; background: linear-gradient(to top, #141414, transparent), url('https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200'); background-size: cover; background-position: center; display: flex; align-items: center; padding-left: 5%; }
-        .hero h1 { font-size: 2.5rem; color: #E50914; margin: 0; }
-        
-        .container { padding: 20px 5%; }
-        .temp-titulo { font-size: 1.2rem; margin: 30px 0 15px 0; border-left: 4px solid #E50914; padding-left: 10px; color: #e5e5e5; }
-        
-        /* ESTA PARTE ORGANIZA EM LINHA */
-        .row { 
-            display: flex; 
-            flex-direction: row; /* Força ficar de lado */
-            gap: 15px; 
-            overflow-x: auto; /* Permite rolar para o lado */
-            padding: 10px 0;
-            scrollbar-width: none; /* Esconde a barra no Firefox */
-        }
-        .row::-webkit-scrollbar { display: none; } /* Esconde a barra no Chrome */
+        :root { --netflix-red: #E50914; --dark-bg: #141414; }
+        body { margin: 0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: var(--dark-bg); color: white; overflow-x: hidden; }
 
-        .card { 
-            min-width: 220px; 
-            height: 125px; 
-            background-size: cover; 
-            background-position: center; 
-            border-radius: 4px; 
-            flex-shrink: 0; /* Impede que o card amasse */
-            display: flex; 
-            align-items: flex-end; 
-            border: 2px solid transparent; 
-            transition: 0.3s;
+        /* HEADER ESTILO NETFLIX */
+        header { 
+            position: fixed; top: 0; width: 100%; z-index: 1000; 
+            display: flex; justify-content: space-between; align-items: center; 
+            padding: 20px 4%; background: linear-gradient(to bottom, rgba(0,0,0,0.7) 10%, transparent);
+            transition: background 0.5s;
         }
-        .card:hover { transform: scale(1.05); border-color: white; }
-        .card-text { background: rgba(0,0,0,0.7); width: 100%; padding: 8px; font-size: 0.8rem; text-align: center; }
+        .logo { color: var(--netflix-red); font-size: 1.8rem; font-weight: bold; letter-spacing: -1px; }
+        .nav-buttons { display: flex; gap: 15px; align-items: center; margin-right: 50px;}
+        .btn-parental { background: rgba(255,255,255,0.1); border: 1px solid white; color: white; padding: 5px 15px; border-radius: 4px; cursor: pointer; font-size: 0.9rem; }
+        .btn-fullscreen { background: none; border: 1px solid white; color: white; padding: 5px 10px; border-radius: 4px; cursor: pointer; }
+
+        /* BANNER PRINCIPAL (HERO) */
+        .hero { 
+            height: 80vh; background: linear-gradient(to top, var(--dark-bg), transparent 50%), 
+            url('https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1600'); 
+            background-size: cover; background-position: center;
+            display: flex; flex-direction: column; justify-content: center; padding-left: 4%;
+        }
+        .hero-title { font-size: 4rem; margin-bottom: 0; }
+        .hero-desc { font-size: 1.2rem; max-width: 600px; margin: 20px 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .hero-btns { display: flex; gap: 10px; }
+        .btn-play { background: white; color: black; padding: 10px 30px; border-radius: 4px; font-weight: bold; cursor: pointer; border: none; font-size: 1.1rem; }
+        .btn-info { background: rgba(109, 109, 110, 0.7); color: white; padding: 10px 30px; border-radius: 4px; font-weight: bold; cursor: pointer; border: none; font-size: 1.1rem; }
+
+        /* CARROSSEL DE TEMPORADAS */
+        .main-container { padding: 0 4% 50px 4%; margin-top: -100px; position: relative; z-index: 10; }
+        .row-title { font-size: 1.4vw; color: #e5e5e5; margin: 40px 0 10px 0; font-weight: bold; }
+        .row-posters { display: flex; overflow-x: scroll; overflow-y: hidden; padding: 20px 0; scrollbar-width: none; }
+        .row-posters::-webkit-scrollbar { display: none; }
+        
+        .poster { 
+            min-width: 250px; height: 140px; object-fit: cover; border-radius: 4px; margin-right: 10px;
+            transition: transform 450ms; cursor: pointer; position: relative;
+            background-size: cover; background-position: center;
+            display: flex; align-items: flex-end;
+        }
+        .poster:hover { transform: scale(1.08); z-index: 100; }
+        .poster-title { background: rgba(0,0,0,0.8); width: 100%; padding: 8px; font-size: 0.8rem; text-align: center; border-radius: 0 0 4px 4px; }
     </style>
 </head>
 <body>
 
-    <header class="hero">
-        <h1>A.I. KIDS LABS</h1>
+    <header id="navbar">
+        <div class="logo">A.I. KIDS LABS</div>
+        <div class="nav-buttons">
+            <button class="btn-fullscreen" onclick="toggleFullScreen()">⛶ TELA CHEIA</button>
+            <button class="btn-parental">ÁREA DOS PAIS</button>
+        </div>
     </header>
 
-    <div class="container">
-        <h2 class="temp-titulo">Temporada 1: O Despertar</h2>
-        <div class="row">
-            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400')"><div class="card-text">1. O que é IA?</div></div>
-            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1531746790731-6c087fecd05a?w=400')"><div class="card-text">2. Robôs Amigos</div></div>
-            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1546776230-bb862b48a495?w=400')"><div class="card-text">3. Cérebro Digital</div></div>
+    <section class="hero">
+        <h1 class="hero-title">O Despertar da IA</h1>
+        <p class="hero-desc">Descubra como os robôs pensam e aprenda a criar o futuro nesta temporada exclusiva para pequenos gênios.</p>
+        <div class="hero-btns">
+            <button class="btn-play">▶ Assistir</button>
+            <button class="btn-info">ⓘ Mais Informações</button>
+        </div>
+    </section>
+
+    <div class="main-container" id="content-rows">
         </div>
 
-        <h2 class="temp-titulo">Temporada 2: Super Poderes</h2>
-        <div class="row">
-            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400')"><div class="card-text">1. Fotos Mágicas</div></div>
-            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1675271591211-126ad94e495d?w=400')"><div class="card-text">2. Desenhos de IA</div></div>
-        </div>
+    <script>
+        // Função Tela Cheia
+        function toggleFullScreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+            } else {
+                if (document.exitFullscreen) { document.exitFullscreen(); }
+            }
+        }
 
-        <h2 class="temp-titulo">Temporada 3: Exploradores</h2>
-        <div class="row">
-            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=400')"><div class="card-text">1. Carros Autônomos</div></div>
-            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=400')"><div class="card-text">2. IA no Espaço</div></div>
-        </div>
+        const data = [
+            { t: "Temporada 1: O Despertar", img: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400", m: ["O que é IA?", "Robôs Amigos", "Cérebro Digital", "Primeiros Passos"] },
+            { t: "Temporada 2: Super Poderes", img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400", m: ["Fotos Mágicas", "Desenhos de IA", "Música Digital"] },
+            { t: "Temporada 3: Exploradores", img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=400", m: ["Carros Autônomos", "IA no Espaço", "Doutor Robô"] },
+            { t: "Temporada 4: Fábrica de Histórias", img: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=400", m: ["Criando Contos", "Roteiros", "Personagens"] },
+            { t: "Temporada 5: Som e Ritmo", img: "https://images.unsplash.com/photo-1514525253361-bee8718a3039?w=400", m: ["Composição", "Vozes de Robô", "DJ IA"] },
+            { t: "Temporada 6: Detetives Digitais", img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400", m: ["O que é Real?", "Privacidade", "Segurança"] },
+            { t: "Temporada 7: IA no Dia a Dia", img: "https://images.unsplash.com/photo-1512428559083-a401c403932e?w=400", m: ["Netflix e GPS", "Algoritmos", "Filtros"] },
+            { t: "Temporada 8: Criadores de Games", img: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=400", m: ["Vilões Inteligentes", "Mundos Infinitos"] },
+            { t: "Temporada 9: Protetores da Terra", img: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400", m: ["Clima", "Animais", "Energia Clean"] },
+            { t: "Temporada 10: Formatura", img: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400", m: ["Meu Grande Projeto", "Certificado"] }
+        ];
 
-        <h2 class="temp-titulo">Temporada 4: Fábrica de Histórias</h2>
-        <div class="row">
-            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1455390582262-044cdead277a?w=400')"><div class="card-text">1. Criando Contos</div></div>
-            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1512046333149-ad73b40310c2?w=400')"><div class="card-text">2. Roteiros</div></div>
-        </div>
+        const container = document.getElementById('content-rows');
+        data.forEach(item => {
+            const row = document.createElement('div');
+            row.innerHTML = `
+                <h2 class="row-title">${item.t}</h2>
+                <div class="row-posters">
+                    ${item.m.map(mod => `
+                        <div class="poster" style="background-image: url('${item.img}')">
+                            <div class="poster-title">${mod}</div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+            container.appendChild(row);
+        });
 
-        <h2 class="temp-titulo">Temporada 5: Som e Ritmo</h2>
-        <div class="row">
-            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1514525253361-bee8718a3039?w=400')"><div class="card-text">1. Música com IA</div></div>
-            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400')"><div class="card-text">2. DJ IA</div></div>
-        </div>
-
-        <h2 class="temp-titulo">Temporada 6: Detetives Digitais</h2>
-        <div class="row">
-            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400')"><div class="card-text">1. O que é Real?</div></div>
-            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400')"><div class="card-text">2. Privacidade</div></div>
-        </div>
-
-        <h2 class="temp-titulo">Temporada 7: IA no Dia a Dia</h2>
-        <div class="row">
-            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1512428559083-a401c403932e?w=400')"><div class="card-text">1. Algoritmos</div></div>
-            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400')"><div class="card-text">2. Filtros</div></div>
-        </div>
-
-        <h2 class="temp-titulo">Temporada 8: Criadores de Games</h2>
-        <div class="row">
-            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?w=400')"><div class="card-text">1. Vilões Inteligentes</div></div>
-            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1550745673-3115469f6e61?w=400')"><div class="card-text">2. Mundos Infinitos</div></div>
-        </div>
-
-        <h2 class="temp-titulo">Temporada 9: Protetores da Terra</h2>
-        <div class="row">
-            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400')"><div class="card-text">1. Clima</div></div>
-            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400')"><div class="card-text">2. Animais</div></div>
-        </div>
-
-        <h2 class="temp-titulo">Temporada 10: Formatura</h2>
-        <div class="row">
-            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400')"><div class="card-text">1. Meu Projeto</div></div>
-            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400')"><div class="card-text">2. Certificado</div></div>
-        </div>
-    </div>
-
+        // Efeito do Header ao rolar
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 100) nav.style.background = '#141414';
+            else nav.style.background = 'linear-gradient(to bottom, rgba(0,0,0,0.7) 10%, transparent)';
+        });
+    </script>
 </body>
 </html>
