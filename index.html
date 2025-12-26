@@ -3,56 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A.I. KIDS LABS - Temporada 3</title>
+    <title>A.I. KIDS LABS - Full Catalog</title>
     <style>
-        body { margin: 0; font-family: 'Helvetica Neue', Arial; background-color: #141414; color: white; overflow-x: hidden; }
-        .hero { height: 70vh; background: linear-gradient(to top, #141414, transparent), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2000'); background-size: cover; display: flex; flex-direction: column; justify-content: center; padding-left: 5%; }
-        .hero h1 { font-size: 3.5rem; margin-bottom: 10px; color: #E50914; }
-        .btn-iniciar { background-color: #E50914; color: white; padding: 12px 30px; font-size: 1.1rem; font-weight: bold; border: none; border-radius: 4px; cursor: pointer; text-decoration: none; display: inline-block; width: fit-content; transition: 0.3s; }
-        .btn-iniciar:hover { transform: scale(1.05); background-color: #ff0f1b; }
-        .temporada-container { padding: 30px 5%; }
-        .temporada-titulo { font-size: 1.6rem; margin: 30px 0 15px 0; color: #aaa; }
-        .modulos-row { display: flex; gap: 15px; overflow-x: auto; padding-bottom: 20px; scroll-behavior: smooth; }
-        .modulo-card { min-width: 220px; height: 125px; background-color: #2f2f2f; border-radius: 4px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 10px; transition: 0.3s; cursor: pointer; border: 2px solid transparent; font-size: 0.9rem; }
-        .modulo-card:hover { transform: scale(1.1); border-color: white; background-color: #3f3f3f; z-index: 10; }
-        .modulos-row::-webkit-scrollbar { height: 5px; }
-        .modulos-row::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+        body { margin: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #141414; color: white; overflow-x: hidden; }
+        .hero { height: 60vh; background: linear-gradient(to top, #141414, transparent), url('https://images.unsplash.com/photo-1620712943543-bcc4628c6757?auto=format&fit=crop&q=80&w=2000'); background-size: cover; display: flex; flex-direction: column; justify-content: center; padding-left: 5%; }
+        .hero h1 { font-size: 4rem; color: #E50914; margin: 0; }
+        .hero p { font-size: 1.2rem; max-width: 500px; }
+        .container { padding: 0 5% 50px 5%; margin-top: -50px; }
+        .temporada-titulo { font-size: 1.4rem; color: #e5e5e5; margin: 40px 0 15px 0; font-weight: bold; }
+        .carrossel { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 20px; scrollbar-width: none; }
+        .carrossel::-webkit-scrollbar { display: none; }
+        .card { min-width: 200px; height: 110px; background-color: #2f2f2f; border-radius: 4px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 10px; font-size: 0.85rem; cursor: pointer; transition: 0.4s; border: 2px solid transparent; }
+        .card:hover { transform: scale(1.15); border-color: white; z-index: 10; background-color: #404040; }
+        .btn-play { background-color: white; color: black; padding: 10px 25px; border-radius: 4px; font-weight: bold; text-decoration: none; display: inline-block; margin-top: 15px; transition: 0.3s; }
+        .btn-play:hover { background-color: #e50914; color: white; }
     </style>
 </head>
 <body>
 
-    <header class="hero">
+    <section class="hero">
         <h1>A.I. KIDS LABS</h1>
-        <p>Temporada 3: Exploradores do Futuro já disponível!</p>
-        <a href="#temporadas" class="btn-iniciar">▶ CONTINUAR ASSISTINDO</a>
-    </header>
+        <p>Explore o universo da Inteligência Artificial em 10 temporadas incríveis para pequenos e grandes gênios.</p>
+        <a href="#temp1" class="btn-play">▶ ASSISTIR AGORA</a>
+    </section>
 
-    <main class="temporada-container" id="temporadas">
-        
-        <h2 class="temporada-titulo">Temporada 1: O Despertar</h2>
-        <div class="modulos-row">
-            <div class="modulo-card">1. O que é IA?</div>
-            <div class="modulo-card">2. Robôs vs Humanos</div>
-            <div class="modulo-card">3. Criando Imagens</div>
-            <div class="modulo-card">4. Chatbots Amigos</div>
-        </div>
+    <div class="container" id="temp1">
+        <script>
+            const temporadas = [
+                { t: "1: O Despertar", m: ["O que é IA?", "Robôs Amigos", "Cérebro Digital", "Primeiros Passos"] },
+                { t: "2: Super Poderes", m: ["Fotos Mágicas", "Falando com Máquinas", "Desenhos de IA", "IA Escritora"] },
+                { t: "3: Exploradores", m: ["Carros Sem Motorista", "IA no Espaço", "Doutor Robô", "Cidades do Futuro"] },
+                { t: "4: Fábrica de Histórias", m: ["Criando Contos", "Roteiros de Cinema", "Personagens Vivos", "Finais Alternativos"] },
+                { t: "5: Som e Ritmo", m: ["Compondo Músicas", "Vozes de Robô", "Sinfonia Digital", "DJ Inteligente"] },
+                { t: "6: Detetives Digitais", m: ["O que é Real?", "Verdade ou Mentira?", "Privacidade", "Ser um Bom Cidadão"] },
+                { t: "7: IA no Dia a Dia", m: ["Como a Netflix sabe?", "GPS e Mapas", "Filtros de Fotos", "Assistentes de Voz"] },
+                { t: "8: Criadores de Games", m: ["Inimigos Inteligentes", "Mundos Infinitos", "Design com IA", "Jogando com a Máquina"] },
+                { t: "9: Protetores da Terra", m: ["Limpando Oceanos", "Previsão do Tempo", "Protegendo Animais", "Energia Limpa"] },
+                { t: "10: Seu Grande Projeto", m: ["Revisão Geral", "Minha Primeira IA", "Apresentação", "Formatura!"] }
+            ];
 
-        <h2 class="temporada-titulo">Temporada 2: Super Poderes</h2>
-        <div class="modulos-row">
-            <div class="modulo-card">1. Vídeos Mágicos</div>
-            <div class="modulo-card">2. Música com IA</div>
-            <div class="modulo-card">3. Ética e Segurança</div>
-        </div>
-
-        <h2 class="temporada-titulo">Temporada 3: Exploradores do Futuro (NOVO)</h2>
-        <div class="modulos-row">
-            <div class="modulo-card" style="border-left: 4px solid #E50914;">1. Carros Inteligentes</div>
-            <div class="modulo-card" style="border-left: 4px solid #E50914;">2. Saúde e Robôs</div>
-            <div class="modulo-card" style="border-left: 4px solid #E50914;">3. IA em Marte</div>
-            <div class="modulo-card" style="border-left: 4px solid #E50914;">4. Cidades do Amanhã</div>
-        </div>
-
-    </main>
+            const container = document.querySelector('.container');
+            temporadas.forEach(temp => {
+                const html = `
+                    <h2 class="temporada-titulo">Temporada ${temp.t}</h2>
+                    <div class="carrossel">
+                        ${temp.m.map(mod => `<div class="card">${mod}</div>`).join('')}
+                    </div>
+                `;
+                container.innerHTML += html;
+            });
+        </script>
+    </div>
 
 </body>
 </html>
