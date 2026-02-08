@@ -11,12 +11,26 @@ An educational platform for teaching kids about artificial intelligence through 
 
 ### Initial Setup
 
-If you're setting up this repository for the first time, follow these steps:
+If you're creating a new repository from scratch, follow these steps:
 
 #### For Windows Users
 
+1. Create and initialize a new repository:
 ```bash
-cd "C:\Users\YOUR-USERNAME\Desktop\ai-kids-labs"
+cd "C:\Users\YOUR-USERNAME\Desktop"
+mkdir ai-kids-labs
+cd ai-kids-labs
+git init
+```
+
+2. Add your files and make your first commit:
+```bash
+git add .
+git commit -m "Initial commit"
+```
+
+3. Connect to GitHub and push:
+```bash
 git remote add origin https://github.com/YOUR-USERNAME/ai-kids-labs.git
 git branch -M main
 git push -u origin main
@@ -24,14 +38,28 @@ git push -u origin main
 
 #### For macOS/Linux Users
 
+1. Create and initialize a new repository:
 ```bash
-cd ~/Desktop/ai-kids-labs
+cd ~/Desktop
+mkdir ai-kids-labs
+cd ai-kids-labs
+git init
+```
+
+2. Add your files and make your first commit:
+```bash
+git add .
+git commit -m "Initial commit"
+```
+
+3. Connect to GitHub and push:
+```bash
 git remote add origin https://github.com/YOUR-USERNAME/ai-kids-labs.git
 git branch -M main
 git push -u origin main
 ```
 
-**Note:** Replace `YOUR-USERNAME` with your actual GitHub username.
+**Note:** Replace `YOUR-USERNAME` with your actual GitHub username. Make sure you've created a repository on GitHub first.
 
 ### Cloning an Existing Repository
 
